@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="SpringWebApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringWebApp</output-path>
+    <root id="archive" name="SpringWebApp.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringWebApp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-logging-1.2" />
+          <element id="library" level="project" name="Spring-libs" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/SpringWebApp-servlet.xml" />
+      </element>
+      <element id="javaee-facet-resources" facet="SpringWebApp/web/Web" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/WebContent/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/hello.jsp" />
+    </root>
+  </artifact>
+</component>

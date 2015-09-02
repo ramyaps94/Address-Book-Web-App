@@ -1,0 +1,56 @@
+Enabling Web app development support when creating a project or module
+============================================================================
+Do one of the following:
+        If you are going to create a new project: click Create New Project on the Welcome screen or select File | New | Project.
+
+        As a result, the New Project wizard opens.
+        If you are going to add a module to an existing project: open the project you want to add a module to, and select File | New | Module.
+
+        As a result, the New Module wizard opens.
+    On the first page of the wizard, in the left-hand pane, select Java. In the right-hand part of the page, specify the JDK that you are going to use.
+    Under Additional Libraries and Frameworks, select the Web Application check box.
+
+    Select the version of the Servlet specification to be supported from the Versions list.
+
+    If you want the deployment descriptor web.xml file to be created, select the Create web.xml check box.
+
+    Click Next.
+    Specify the name and location settings. For more information, see Project Name and Location or Module Name and Location.
+
+    Click Finish.
+
+
+How to create a war file
+====================================
+
+1) Menu: File > Project Structure > Artifacts
+2) Click the green + icon and create a "Web Application: Archive", then OK
+3) Menu: Build > Build Artifacts ... > Web: war
+
+By default it should generate it under your <project>/out/artifacts/web_war.war
+
+
+
+How to start the tomcat server
+=====================================
+-   cd apache-tomcat-8.0.24/bin
+-   ./startup.sh
+-   ./shutdown.sh
+
+
+To debug the application using tomcat
+====================================================
+-   cd bin
+-   ./catalina.sh jpda start
+-   ps waux | grep tomcat
+-   come back to intellij , set the debug point in the program
+-   go to run , edit configurations , default , remote and then name the remote server and give the port number and set it 8000
+            - for running jvm:
+            agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000
+            - for running jdk1.4:
+            -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
+and click ok
+-   then debug the application , open the url in the browser and see how your application is debugged and hoe does the control flow happens.
+-   ./shutdown.sh
+
+
