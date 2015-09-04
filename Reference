@@ -29,6 +29,11 @@ How to create a war file
 
 By default it should generate it under your <project>/out/artifacts/web_war.war
 
+After You generate the war file copy the path and paste it in webapps folder under tomcat and run the following command
+
+1) jar xvf SpringWebApp.war
+and then put the files in "SpringWebApp" folder
+
 
 
 How to start the tomcat server
@@ -52,5 +57,22 @@ To debug the application using tomcat
 and click ok
 -   then debug the application , open the url in the browser and see how your application is debugged and hoe does the control flow happens.
 -   ./shutdown.sh
+
+
+reference files
+=======================
+/*
+    @RequestMapping(value = "/country", method = RequestMethod.GET)
+    public ModelAndView country() {
+        return new ModelAndView("country", "command", new Country());
+    }
+
+    @RequestMapping(value = "/getCountry", method = RequestMethod.GET)
+    public String getCountry(@ModelAttribute("SpringWebApp") Country country,
+                             ModelMap model) {
+        model.addAttribute("name", country.getName());
+        return "result";
+    }
+    */
 
 
