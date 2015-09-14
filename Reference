@@ -59,7 +59,7 @@ and click ok
 -   ./shutdown.sh
 
 
-reference files
+reference methods
 =======================
 /*
     @RequestMapping(value = "/country", method = RequestMethod.GET)
@@ -76,3 +76,65 @@ reference files
     */
 
 
+main
+===========
+
+package com.webapp;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.List;
+
+public class MainApp {
+
+        public static void main(String[] args) {
+            ApplicationContext context =
+                    new ClassPathXmlApplicationContext("beans.xml");
+
+            CountryJDBCTemplate countryJDBCTemplate = (CountryJDBCTemplate)context.getBean("CountryJDBCTemplate");
+
+            System.out.println("------Records Creation--------" );
+            countryJDBCTemplate.create("India");
+            countryJDBCTemplate.create("USA");
+            countryJDBCTemplate.create("ENGLAND");
+
+            System.out.println("------Listing Multiple Records--------" );
+            List<Country> countries = countryJDBCTemplate.listCountries();
+            for (Country record : countries) {
+                System.out.print(", Name : " + record.getName());
+            }
+            System.out.println("----Listing Record -----");
+            Country country = countryJDBCTemplate.getCountry();
+            System.out.print(", Name : " + country.getName());
+
+            System.out.println("----Deleting Record with name = India -------");
+            countryJDBCTemplate.delete("India");
+            System.out.print("deleted");
+
+
+        }
+    }
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+
+    <!-- Initialization for data source -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="password"/>
+    </bean>
+
+    <!-- Definition for studentJDBCTemplate bean -->
+    <bean id="countryJDBCTemplate"
+          class="com.webapp.CountryJDBCTemplate">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
+</beans>

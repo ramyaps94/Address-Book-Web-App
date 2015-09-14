@@ -1,19 +1,34 @@
 package com.webapp;
 
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-@Controller
+@RestController
 public class CountryController {
-    ArrayList<String> countries = new ArrayList<String>();
+
+    @Autowired
+    private CountryDAO countryDAO;
+
+    @RequestMapping(value = "/country", headers = "Accept=application/json",
+            method = RequestMethod.GET)
+    public List<Country> listCountry() throws IOException {
+        //model.addObject("listCountry", listCountry);
+        //model.setViewName("country");
+
+        return countryDAO.listCountries();
+
+    }
+
+    ArrayList<String> countries = new ArrayList<>();
 
     @RequestMapping(value = "/getCountryList", produces = "text/plain", method = RequestMethod.GET)
-    @ResponseBody
     public String getCountryList() {
         ArrayList<String> resultList = getCountries();
         String result = "";
@@ -25,7 +40,7 @@ public class CountryController {
     ArrayList<String> getCountries() {
         countries.add("India");
         countries.add("China");
-        countries.add("USA");
         return countries;
     }
+
 }

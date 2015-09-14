@@ -7,6 +7,9 @@
     <SOURCES>
       <root url="file://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-framework-4.0.3.RELEASE/libs" />
     </SOURCES>
+    <excluded>
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-framework-4.0.3.RELEASE/libs/jackson-annotations-2.0.1.jar!/" />
+    </excluded>
     <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib/spring-framework-4.0.3.RELEASE/libs" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-framework-4.0.3.RELEASE/libs" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib/spring-framework-4.0.3.RELEASE/libs" recursive="false" type="SOURCES" />
