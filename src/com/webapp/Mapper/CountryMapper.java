@@ -1,5 +1,6 @@
-package com.webapp;
+package com.webapp.Mapper;
 
+import com.webapp.Model.Country;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

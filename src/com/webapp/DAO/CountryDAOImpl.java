@@ -1,5 +1,7 @@
-package com.webapp;
+package com.webapp.DAO;
 
+import com.webapp.Mapper.CountryMapper;
+import com.webapp.Model.Country;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;

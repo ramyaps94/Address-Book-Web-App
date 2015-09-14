@@ -1,4 +1,6 @@
-package com.webapp;
+package com.webapp.DAO;
+
+import com.webapp.Model.Country;
 
 import java.util.List;
 

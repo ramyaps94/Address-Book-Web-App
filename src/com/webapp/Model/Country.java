@@ -1,4 +1,4 @@
-package com.webapp;
+package com.webapp.Model;
 
 
 public class Country {

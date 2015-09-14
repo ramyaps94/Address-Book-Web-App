@@ -1,6 +1,8 @@
-package com.webapp;
+package com.webapp.Configuration;
 
 
+import com.webapp.DAO.CountryDAO;
+import com.webapp.DAO.CountryDAOImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

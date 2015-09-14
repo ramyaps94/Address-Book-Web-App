@@ -1,6 +1,8 @@
-package com.webapp;
+package com.webapp.Controller;
 
 
+import com.webapp.DAO.CountryDAO;
+import com.webapp.Model.Country;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
