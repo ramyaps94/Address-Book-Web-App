@@ -1,11 +1,16 @@
 package com.webapp;
 
-/**
- * Created by ramyaps on 02/09/15.
- */
-public class Country {
-        private String name;
 
+public class Country {
+    private String name;
+
+    public Country(){
+
+    }
+    /*only for test purpose*/
+    public Country(String name) {
+        this.name = name;
+    }
 
     public void setName(String name) {
         this.name = name;

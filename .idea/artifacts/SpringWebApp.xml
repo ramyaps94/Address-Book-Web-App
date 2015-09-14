@@ -10,6 +10,9 @@
           <element id="library" level="project" name="commons-logging-1.2" />
           <element id="library" level="project" name="Spring-libs" />
           <element id="library" level="project" name="jackson" />
+          <element id="library" level="project" name="junit-4.11" />
+          <element id="library" level="project" name="mockito-all-1.9.5" />
+          <element id="library" level="project" name="javax.servlet-3.0.0.v201112011016" />
         </element>
         <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/SpringWebApp-servlet.xml" />
       </element>
