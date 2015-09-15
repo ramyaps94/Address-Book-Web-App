@@ -10,6 +10,10 @@ import java.util.List;
 
 public class CountryDAOImpl implements CountryDAO {
     private JdbcTemplate jdbcTemplateObject;
+
+    public CountryDAOImpl(){
+    }
+
     public CountryDAOImpl(DataSource dataSource) {
         jdbcTemplateObject = new JdbcTemplate(dataSource);
     }

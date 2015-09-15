@@ -32,6 +32,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         dataSource.setPassword("ramya");
 
         return dataSource;
+
     }
 
     @Bean
