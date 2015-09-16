@@ -138,3 +138,12 @@ public class MainApp {
     </bean>
 
 </beans>
+
+
+  @RequestMapping(value = "/addCountry", method = RequestMethod.POST)
+//    public String addCountry(@ModelAttribute("SpringWeb") Country country,
+//                             ModelMap model) {
+//        model.addAttribute("name", country.getName());
+//
+//        return "Successful";
+//    }

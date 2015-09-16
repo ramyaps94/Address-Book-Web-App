@@ -9,7 +9,6 @@ public class CountryTest {
     @Test
     public void shouldBeAbleToReturnCountry() {
         Country country = new Country("India");
-
-        assertEquals("India",country.getName());
+        assertEquals("India", country.getName());
     }
 }
